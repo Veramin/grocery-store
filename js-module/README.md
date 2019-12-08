@@ -3,11 +3,11 @@
   In the past, Javascript can execute the scripting by itself, because it's small.  In recent years, It's getting more and more complicated.  So, we have to find a method to solve a problem that is how to execute scripts effectively. Therefore, a concept uccurs - Module. According to our needs, we can export and import revent modules. There are many ways about module, this article I just talk about the export/import in ES6.
 
 ### II. How to use the Module?
-+ General Export and Import
++ Named Export and Import
 + Default Export and Import
 + Rename Export and Import
 
-#### II.I The folder structure: General Export and Import
+#### II.I The folder structure: Named Export and Import
 - js-module
   - js
     - basic.js
