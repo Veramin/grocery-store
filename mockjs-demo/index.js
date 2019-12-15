@@ -19,8 +19,10 @@ var template = {
   ],
   'aboutRandom|1-3': [
     {
-      'randomId|+1': 1,
+      // 是否是学生
+      'isStudent': Mock.Random.boolean(),
       
+
     }
   ]
 }
