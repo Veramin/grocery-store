@@ -12,6 +12,8 @@
   + Null
 + Reference Types
   + Object
+  + Array
+  + Function 
 
 #### How to declare a variable ?
 ```Javascript
