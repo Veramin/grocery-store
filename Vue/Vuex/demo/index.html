@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>vuex-demo</title>
+  <script src="https://unpkg.com/vue"></script>
+  <script src="https://unpkg.com/vuex"></script>
+</head>
+<body>
+  <div id="app">
+    <h1>{{welcome}}</h1>
+    <h3>{{message}}</h3>
+    <h3>{{count}}</h3>
+    <button @click="pressed">Increment Counter</button>
+  </div>
+
+  <script>
+  const store = new Vuex.Store({
+    state: {
+      message: 'Hello from vuex...',
+      count:0
+    },
+    mutations: {
+      // sycronous
+      increment(state, playload) {
+        state.count += playload
+
+      }
+    },
+    actions: {
+      // asycronous
+      increment(state, playload) {
+        state.commit('increment', playload)
+      }
+
+    },
+    getters: {
+      /**
+       * Function: it's working so now insteaf of getting it directly from the state
+       *  we are getting it from the getters so you could see you can imagine that
+       * you can set up a bunch of different getters here and do a bunch of different 
+       * things and have all your components grab it and you are not going to have 
+       * to you know repeat the same code in every single component.
+       */
+      message(state) {
+        console.log(state)
+        return state.message.toUpperCase();
+      },
+      counte(state) {
+        return state.count;
+      }
+    }
+  })
+    new Vue({
+      el: '#app',
+      data() {
+        return {
+          welcome: 'Hello, vuex'
+        }
+      },
+      computed: {
+        message() {
+          return store.getters.message
+        },
+        count() {
+          return store.getters.counte
+        }
+      },
+      methods: {
+        pressed() {
+          store.dispatch('increment', 10)
+        }
+      }
+    })
+  </script>
+
+
+</body>
+</html>
