@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .demo1-bg1,
+    .demo1-bg1-1 {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      padding: 7px;
+      width: 30px;
+      height: 30px;
+      display: -webkit-box;
+      -webkit-box-pack: center;
+      -webkit-box-align: center;
+      /* margin: 50px auto; */
+      background: fff;
+      border-radius: 50%;
+      -webkit-box-shadow: 0 0 0 4px transparent inset;
+      box-shadow: 0 0 0 4px transparent inset;
+      display: flex;
+    }
+
+    .demo1-bg1-1 {
+      -webkit-box-shadow: 0 0 0 4px orange inset;
+      box-shadow: 0 0 0 4px orange inset;
+    }
+
+    /* .demo1-bg2-1,
+    .demo1-bg2-2 {
+      position: relative;
+      margin: 0;
+      padding: 0;
+      -webkit-box-flex: 1;
+      height: 30px;
+      background: #fff;
+      border: 5px solid grey;
+    } */
+
+    .demo1-bg2-1 {
+      width: 15px;
+      height: 36px;
+      /* background-color: pink; */
+      margin-top: -7px;
+      display: inline-block;
+      margin-left: -7px;
+      border-radius: 50px 0 0 50px;
+      border: 4px solid green;
+      border-right-color: transparent;
+      z-index: 4;
+    }
+
+    .hidden {}
+
+    .demo1-bg2-2 {
+      width: 15px;
+      height: 36px;
+      margin-top: -7px;
+      display: inline-block;
+      margin-right: -7px;
+      border-radius: 0 50px 50px 0;
+      border: 4px solid green;
+      border-left-color: transparent;
+      transform-origin: center left;
+      transform: rotate(180deg);
+      z-index: 3;
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="demo1-bg1 hidden">
+    <div id="J_bg2_1" class="demo1-bg2-1"></div>
+    <div id="J_bg2_2" class="demo1-bg2-2"></div>
+  </div>
+  <div class="demo1-bg1-1"></div>
+<script>
+          var current = 0
+          setInterval(() => {
+          current++
+          document.getElementById('J_bg2_2').style.transform =
+          'translate(0px, 0px) rotate(' + current + 'deg)'
+          }, 100)
+</script>
+</body>
+
+</html>
