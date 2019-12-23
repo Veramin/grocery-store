@@ -31,9 +31,7 @@
     },
     actions: {
       // asycronous
-      increment(state, playload) {
-        state.commit('increment', playload)
-      }
+     
 
     },
     getters: {
@@ -48,7 +46,7 @@
         console.log(state)
         return state.message.toUpperCase();
       },
-      counte(state) {
+      count(state) {
         return state.count;
       }
     }
@@ -65,7 +63,7 @@
           return store.getters.message
         },
         count() {
-          return store.getters.counte
+          return store.getters.count
         }
       },
       methods: {
