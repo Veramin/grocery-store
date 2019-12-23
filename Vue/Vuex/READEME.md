@@ -3,7 +3,7 @@
 
 2. 异步提交 => action  dispatch  getters
 
-3. 只有store.commit()才可以触发mutations里边的方法。
+3. 只有store.commit()才可以触发mutations里边的方法， 进而改变state的状态。
 
 4. 由于 *** store 中的状态是响应式的 ***，在组件中调用 store 中的状态仅需要在计算属性中返回即可。触发变化也仅仅是在组件的 methods 中提交 mutation
 + 调用state => computed中返回状态
@@ -135,4 +135,21 @@
           }
         }
       ```
+
+
+
+
+# 补充
+
+## mutations和actions的区别
+
+### mutations 归纳
+
+  1. 使用场景：  => 简单的状态改变逻辑
+  2. 通过提交mutations来改变store中state的状态
+  3. 注意事项：
+      *** mutation类型用大写常量表示，一般会有一本js文件将action的函数的名字转换成常量大写再在mutation中引入，至此，mutation的类型都用大写 ***
+### actions 归纳
+  1. 使用场景：  => 复杂的业务逻辑 || 异步操作（从后台取数据）
+  2. 
 
